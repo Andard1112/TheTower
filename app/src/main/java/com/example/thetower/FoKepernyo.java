@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class FoKepernyo extends AppCompatActivity {
     private Button btnContinue, btnNewGame, btnSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fokepernyo);
         init();
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btnNewGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newGame = new Intent(MainActivity.this,characterCreation.class);
+                Intent newGame = new Intent(FoKepernyo.this,characterCreation.class);
                 startActivity(newGame);
                 finish();
             }

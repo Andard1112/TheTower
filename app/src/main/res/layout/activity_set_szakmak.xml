@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetSzakmak"
+    android:background="@drawable/fo_kepernyo">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageButton
+                android:id="@+id/btnGuildDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/balra_mutato_nyil" />
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:id="@+id/etGuildName"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="italic"
+                android:enabled="false"
+                android:text="Fegyverkovács"
+                />
+            <ImageButton
+                android:id="@+id/btnGuildUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/jobbra_mutato_nyil" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/etGuildInformation"
+            android:text="Amennyiben ezt a szakmát választod, akkor a fegyverkovácsnál vásárolt fegyverek(egykezes,kétkezes,tőr,íj) olcsóbb lesz 5%-al. Ez a szakma nagyon hasznos az összes hős osztály számára, de leginkább a Warior a Rouge és a Hunter-nek."
+            android:gravity="center_horizontal"
+            android:textSize="32dp"
+            android:textColor="@android:color/white"
+            android:textStyle="italic"
+            android:enabled="false"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Karakter létrehozása."
+            android:id="@+id/btnCreate"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
