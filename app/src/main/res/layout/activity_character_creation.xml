@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,38 +13,50 @@
         android:orientation="horizontal"
         >
 
-        <LinearLayout
-            android:layout_width="261dp"
+        <RelativeLayout
+            android:layout_width="220dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btnClassDown"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:background="@drawable/balra_mutato_nyil"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Szakma leírása:"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:enabled="false"
+                android:id="@+id/etSzakmaLeiras"
+                android:textColor="@android:color/black"
                 />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etSzakmaInfo"
+                android:enabled="false"
+                android:layout_below="@id/etSzakmaLeiras"
+                android:textColor="@android:color/black"/>
 
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+
+            >
+
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/ivcharacter"
+                android:layout_centerHorizontal="true"
                 android:hint="Karaktered neve:"
-                />
+                android:textColor="@android:color/white"/>
             <ImageView
                 android:id="@+id/ivcharacter"
                 android:layout_width="216dp"
-                android:layout_height="222dp"
-                tools:srcCompat="@drawable/knight" />
+                android:layout_height="180dp"
+                tools:srcCompat="@drawable/knight"
+                android:layout_above="@+id/etClass"
+                android:layout_centerHorizontal="true"/>
 
            <EditText
                android:layout_width="150dp"
@@ -56,33 +67,88 @@
                android:textSize="20dp"
                android:textColor="#fff"
                android:enabled="false"
+               android:layout_above="@+id/etSzakma"
+               android:layout_centerHorizontal="true"
                />
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:id="@+id/etSzakma"
+                android:text="Fegyverkovács"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:enabled="false"
+                android:layout_above="@+id/btnCreate"
+                android:layout_centerHorizontal="true"
+                />
 
             <Button
                 android:id="@+id/btnCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Karakter létrehozás"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="261dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            <Button
+                android:id="@+id/btnSzakmaDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnCreate"
+                android:layout_toLeftOf="@id/etSzakma"
+                android:background="@drawable/balra_mutato_nyil"
+                android:text="" />
 
+            <Button
+                android:id="@+id/btnSzakmaUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/jobbra_mutato_nyil"
+                android:text=""
+                android:layout_toRightOf="@id/etSzakma"
+                android:layout_above="@+id/btnCreate"
+                />
+            <Button
+                android:id="@+id/btnClassDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnSzakmaDown"
+                android:layout_toLeftOf="@id/etClass"
+                android:background="@drawable/balra_mutato_nyil"
+                android:text="" />
 
             <Button
                 android:id="@+id/btnClassUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
                 android:background="@drawable/jobbra_mutato_nyil"
+                android:text=""
+                android:layout_toRightOf="@id/etClass"
+                android:layout_above="@+id/btnSzakmaUp"
                 />
+        </RelativeLayout>
 
-
-        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Kaszt leírása:"
+                android:enabled="false"
+                android:id="@+id/kasztLeiras"
+                android:textColor="@android:color/black"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etClassInfo"
+                android:enabled="false"
+                android:layout_below="@+id/kasztLeiras"
+                android:textColor="@android:color/black"/>
+        </RelativeLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

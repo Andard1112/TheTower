@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fo_kepernyo"
+    tools:context=".GameFoKepernyo">
+
+    <Button
+        android:id="@+id/btnDuengeon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Dungeon" />
+
+    <Button
+        android:id="@+id/btnKarakter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Karakter" />
+
+    <Button
+        android:id="@+id/btnBag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnKarakter"
+        android:text="Bag" />
+
+    <Button
+        android:id="@+id/btnShopFegyver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="FegyverKovács" />
+
+    <Button
+        android:id="@+id/btnShopPancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnShopFegyver"
+        android:layout_alignParentRight="true"
+        android:text="Páncélkovács" />
+
+    <Button
+        android:id="@+id/btnShopPoti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnShopPancel"
+        android:layout_alignParentRight="true"
+        android:text="Poti főzde" />
+</RelativeLayout>

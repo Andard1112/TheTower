@@ -9,8 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoadingScreen"
-            android:screenOrientation="landscape" >
+        <activity android:name=".DungeonFoKepernyo"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ShopPoti"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".ShopPancel"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".ShopFegyver"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".KarakterBag"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".KarakterStatusz"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".GameFoKepernyo"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoadingScreen"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,9 +43,7 @@
             android:name=".FoKepernyo"
             android:label="@string/app_name"
             android:parentActivityName=".characterCreation"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
