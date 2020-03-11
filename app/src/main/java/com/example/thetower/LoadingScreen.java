@@ -20,7 +20,7 @@ public class LoadingScreen extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.tvSzazalek);
 
-        progressBar.setMax(100);
+        progressBar.setMax(1);
         progressBar.setScaleY(3f);
 
         progressAnimation();

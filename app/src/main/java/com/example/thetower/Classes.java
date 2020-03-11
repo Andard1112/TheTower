@@ -2,10 +2,9 @@ package com.example.thetower;
 
 public class Classes {
     private String name,leiras;
-    private int szam,stamina,strength,deffense,agility,atackPower;
+    private int stamina,strength,deffense,agility,atackPower;
 
     public Classes(int szam) {
-        this.szam = szam;
         switch (szam){
             case 1:
                 name = "Knight";

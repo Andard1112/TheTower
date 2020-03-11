@@ -1,7 +1,9 @@
 package com.example.thetower;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,38 +40,49 @@ public class GameFoKepernyo extends AppCompatActivity {
                 finish();
             }
         });
-        btnShopPoti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toShopPoti = new Intent(GameFoKepernyo.this,ShopPoti.class);
-                startActivity(toShopPoti);
-                finish();
-            }
-        });
-        btnShopPancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toShopPancel = new Intent(GameFoKepernyo.this,ShopPancel.class);
-                startActivity(toShopPancel);
-                finish();
-            }
-        });
+
         btnShopFegyver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toShopFegyver = new Intent(GameFoKepernyo.this,ShopFegyver.class);
-                startActivity(toShopFegyver);
-                finish();
+                // Build an AlertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(GameFoKepernyo.this);
+                // Set a title for alert dialog
+                builder.setTitle("Kovács");
+                // Ask the final question
+                builder.setMessage("Páncél vagy fegyverkovácshoz szeretne lépni?");
+                // Set the alert dialog yes button click listener
+                builder.setPositiveButton("Fegyver kovács", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Positive buton click
+                        Intent toShopFegyver = new Intent(GameFoKepernyo.this,ShopFegyver.class);
+                        startActivity(toShopFegyver);
+                        finish();
+                    }
+                });
+                // Set the alert dialog no button click listener
+                builder.setNegativeButton("Páncél kovács", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Negative buton click
+                        Intent toShopPancel = new Intent(GameFoKepernyo.this,ShopPancel.class);
+                        startActivity(toShopPancel);
+                        finish();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                // Display the alert dialog on interface
+                dialog.show();
+
             }
         });
 
     }
-    private void init(){
+    private void init() {
         btnDuengeon = findViewById(R.id.btnDuengeon);
         btnBag = findViewById(R.id.btnBag);
         btnKarakter = findViewById(R.id.btnKarakter);
-        btnShopPoti = findViewById(R.id.btnShopPoti);
+
         btnShopFegyver = findViewById(R.id.btnShopFegyver);
-        btnShopPancel = findViewById(R.id.btnShopPancel);
     }
 }

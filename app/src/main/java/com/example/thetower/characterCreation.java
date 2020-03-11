@@ -18,17 +18,18 @@ public class characterCreation extends AppCompatActivity{
     private int clas = 1;
     private int szakma = 1;
     CharacterInformation chi = new CharacterInformation();
-
+    AdatbazisSegito as = new AdatbazisSegito(characterCreation.this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_creation);
         init();
+        as.open();
         ivcharacter.setImageResource(R.drawable.knight);
         Szakmak szakmak = new Szakmak(szakma);
         etSzakmaInfo.setText(szakmak.getLeiras()+"");
         Classes classes = new Classes(clas);
-        etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés"+classes.getDeffense()+"\n"+classes.getLeiras());
+        etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
         btnClassDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,12 +38,12 @@ public class characterCreation extends AppCompatActivity{
                     Classes classes = new Classes(clas);
                     etClass.setText(classes.getName());
                     ivcharacter.setImageResource(R.drawable.hunter);
-                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés"+classes.getDeffense()+"\n"+classes.getLeiras());
+                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
                 }else{
                     clas--;
                     Classes classes = new Classes(clas);
                     etClass.setText(classes.getName());
-                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés"+classes.getDeffense()+"\n"+classes.getLeiras());
+                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
                     switch (clas){
                         case 2:
                             ivcharacter.setImageResource(R.drawable.warrior);
@@ -67,12 +68,12 @@ public class characterCreation extends AppCompatActivity{
                     etClass.setText(classes.getName());
                     ivcharacter.setImageResource(R.drawable.knight);
                     etClassInfo.setText("");
-                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés"+classes.getDeffense()+"\n"+classes.getLeiras());
+                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
                 }else{
                     clas++;
                     Classes classes = new Classes(clas);
                     etClass.setText(classes.getName());
-                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés"+classes.getDeffense()+"\n"+classes.getLeiras());
+                    etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
                     switch (clas){
                         case 2:
                             ivcharacter.setImageResource(R.drawable.warrior);
@@ -127,16 +128,16 @@ public class characterCreation extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String name = etName.getText().toString();
+                as.open();
                 if (!name.isEmpty()) {
-
+                    String szakma = etSzakma.getText().toString();
                     Classes classes = new Classes(clas);
                     CharacterInformation character = new CharacterInformation();
                     character.name = name;
-                    character.setStamina(classes.getStamina());
-                    character.setStrength(classes.getStrength());
-                    character.setDeffense(classes.getDeffense());
-                    character.setAgility(classes.getAgility());
-                    character.setAtackPower(classes.getAtackPower());
+                    long result = as.insertRow(1,name,szakma,classes.getStamina(),classes.getStrength(),classes.getDeffense()
+                            ,classes.getAgility(),0,100,0,
+                            0,0,etClass.getText().toString(),0,1,
+                            1,1,1,1,1,1);
                     Intent gameStart = new Intent(characterCreation.this,GameFoKepernyo.class);
                     startActivity(gameStart);
                     finish();

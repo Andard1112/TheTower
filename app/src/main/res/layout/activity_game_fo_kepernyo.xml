@@ -16,39 +16,23 @@
 
     <Button
         android:id="@+id/btnKarakter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:text="Karakter" />
+        android:background="@drawable/sisak_hatter" />
 
     <Button
         android:id="@+id/btnBag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnKarakter"
-        android:text="Bag" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bag" />
 
     <Button
         android:id="@+id/btnShopFegyver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="FegyverKovács" />
+        android:background="@drawable/kovacs" />
 
-    <Button
-        android:id="@+id/btnShopPancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnShopFegyver"
-        android:layout_alignParentRight="true"
-        android:text="Páncélkovács" />
-
-    <Button
-        android:id="@+id/btnShopPoti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnShopPancel"
-        android:layout_alignParentRight="true"
-        android:text="Poti főzde" />
 </RelativeLayout>

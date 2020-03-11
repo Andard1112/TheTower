@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dungeon_room_alap"
+    tools:context=".Dungeon">
+
+    <Button
+        android:id="@+id/btnUp"
+        android:layout_width="108dp"
+        android:layout_height="109dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/door_up"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnRight"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/door_right"
+        tools:visibility="visible" />
+
+
+    <Button
+        android:id="@+id/btnDown"
+        android:layout_width="wrap_content"
+        android:layout_height="101dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/door_down"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnLeft"
+        android:layout_width="77dp"
+        android:layout_height="83dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/door_left"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnEnemy"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="?attr/selectableItemBackground" />
+</RelativeLayout>

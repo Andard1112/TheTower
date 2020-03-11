@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/paper_hatter"
+    tools:context=".Fight">
+
+
+    <ImageView
+        android:id="@+id/ivFHero"
+        android:layout_width="365dp"
+        android:layout_height="155dp"
+        app:srcCompat="@drawable/warrior" />
+
+    <ImageView
+        android:id="@+id/ivFEnemy"
+        android:layout_width="365dp"
+        android:layout_height="155dp"
+        android:layout_toRightOf="@+id/ivFHero"
+        app:srcCompat="@drawable/minotaurus" />
+
+    <TextView
+        android:id="@+id/tvFName"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ivFHero"
+        android:gravity="center"
+        android:text="name" />
+
+    <TextView
+        android:id="@+id/tvFEnemyName"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/ivFEnemy"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="Enemy Name" />
+
+    <TextView
+        android:id="@+id/tvFStamina"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFName"
+        android:gravity="center"
+        android:text="stamina" />
+
+    <TextView
+        android:id="@+id/tvFEnemyStamina"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFName"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="Enemy life" />
+
+    <TextView
+        android:id="@+id/tvFStrength"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFStamina"
+        android:gravity="center"
+        android:text="strength" />
+
+    <TextView
+        android:id="@+id/tvFEnemyStrength"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFStamina"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="Enemy Atack Power" />
+
+    <TextView
+        android:id="@+id/tvFLoot"
+        android:layout_width="365dp"
+        android:layout_height="97dp"
+        android:layout_below="@id/tvFEnemyStrength"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:gravity="center"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvFAgility"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFStrength"
+        android:gravity="center"
+        android:text="Agility" />
+
+    <TextView
+        android:id="@+id/tvFArmor"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFAtackPower"
+        android:gravity="center"
+        android:text="Armor" />
+
+    <TextView
+        android:id="@+id/tvFAtackPower"
+        android:layout_width="365dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/tvFAgility"
+        android:gravity="center"
+        android:text="Atack Power" />
+
+    <Button
+        android:id="@+id/btnFOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/space"
+        android:text="OK"
+        tools:visibility="invisible" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="146dp"
+        android:layout_height="49dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

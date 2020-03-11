@@ -1,9 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KarakterStatusz">
+    tools:context=".KarakterStatusz"
+    android:background="@drawable/paper_hatter2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivKSCharacterPortre"
+        android:layout_width="365dp"
+        android:layout_height="155dp"
+        />
+
+    <EditText
+        android:id="@+id/etKSStamina"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/spacePortreAlatt"
+        android:layout_toRightOf="@id/btnKSStaminaDown"
+        android:text="Stamina:"
+        android:enabled="false"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etKSStrength"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/etKSStamina"
+        android:layout_toRightOf="@id/btnKSStrengthDown"
+        android:text="Strength:"
+        android:textColor="@android:color/black"
+        android:enabled="false"/>
+
+    <EditText
+        android:id="@+id/etKSDeffense"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/etKSStrength"
+        android:layout_toRightOf="@id/btnKSDeffenseDown"
+        android:text="Deffense:"
+        android:textColor="@android:color/black"
+        android:enabled="false"/>
+
+    <EditText
+        android:id="@+id/etKSAgility"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/etKSDeffense"
+        android:layout_toRightOf="@id/btnKSAgilityDown"
+        android:text="Agility:"
+        android:textColor="@android:color/black"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/btnKSStaminaDown"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/spacePortreAlatt"
+        android:layout_toRightOf="@id/spaceBalOldalt"
+        android:background="@drawable/balra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSStaminaUp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/spacePortreAlatt"
+        android:layout_toRightOf="@id/etKSStamina"
+        android:background="@drawable/jobbra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSStrengthDown"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/btnKSStaminaDown"
+        android:layout_toRightOf="@id/spaceBalOldalt"
+        android:background="@drawable/balra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSStrengthUp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/btnKSStaminaUp"
+        android:layout_toRightOf="@id/etKSStrength"
+        android:background="@drawable/jobbra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSDeffenseDown"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/btnKSStrengthDown"
+        android:layout_toRightOf="@id/spaceBalOldalt"
+        android:background="@drawable/balra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSDeffenseUp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/btnKSStrengthUp"
+        android:layout_toRightOf="@id/etKSDeffense"
+        android:background="@drawable/jobbra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSAgilityDown"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/btnKSDeffenseDown"
+        android:layout_toRightOf="@id/spaceBalOldalt"
+        android:background="@drawable/balra_mutato_nyil" />
+
+    <Button
+        android:id="@+id/btnKSAgilityUp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/btnKSDeffenseUp"
+        android:layout_toRightOf="@id/etKSAgility"
+        android:background="@drawable/jobbra_mutato_nyil" />
+
+    <Space
+        android:id="@+id/spaceBalOldalt"
+        android:layout_width="57dp"
+        android:layout_height="247dp"
+        android:layout_below="@id/spacePortreAlatt" />
+
+    <Space
+        android:id="@+id/spacePortreAlatt"
+        android:layout_width="365dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/ivKSCharacterPortre" />
+
+    <ImageView
+        android:id="@+id/ivKSSisak"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/spacePortreMellett"
+        app:srcCompat="@drawable/sisak_hatter" />
+
+    <Space
+        android:id="@+id/spacePortreMellett"
+        android:layout_width="113dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/ivKSCharacterPortre" />
+
+    <ImageView
+        android:id="@+id/ivKSChest"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivKSSisak"
+        android:layout_toRightOf="@id/spacePortreMellett"
+        app:srcCompat="@drawable/mellvert_hatter" />
+
+    <ImageView
+        android:id="@+id/ivKSNadrag"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivKSChest"
+        android:layout_toRightOf="@id/spacePortreMellett"
+        app:srcCompat="@drawable/nadrag_hatter" />
+
+    <ImageView
+        android:id="@+id/ivKSCsizma"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivKSNadrag"
+        android:layout_toRightOf="@id/spacePortreMellett"
+        app:srcCompat="@drawable/csizma_hatter" />
+
+    <ImageView
+        android:id="@+id/ivKSKard"
+        android:layout_width="110dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/spaceKardFelett"
+        android:layout_toRightOf="@id/ivKSCharacterPortre"
+        app:srcCompat="@drawable/kard_hatter" />
+
+    <Space
+        android:id="@+id/spaceKardFelett"
+        android:layout_width="113dp"
+        android:layout_height="109dp"
+        android:layout_toRightOf="@id/ivKSCharacterPortre" />
+
+    <Space
+        android:id="@+id/spacePajzsFelett"
+        android:layout_width="103dp"
+        android:layout_height="109dp"
+        android:layout_toRightOf="@id/ivKSSisak" />
+
+    <ImageView
+        android:id="@+id/ivKSPajzs"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/spacePajzsFelett"
+        android:layout_toRightOf="@id/ivKSSisak"
+        app:srcCompat="@drawable/pajzs_hatter" />
+
+</RelativeLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".characterCreation"
-    android:background="@drawable/fo_kepernyo"
+    android:background="@drawable/paper_hatter2"
     >
 
     <LinearLayout
@@ -49,39 +49,40 @@
                 android:layout_above="@+id/ivcharacter"
                 android:layout_centerHorizontal="true"
                 android:hint="Karaktered neve:"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+
             <ImageView
                 android:id="@+id/ivcharacter"
-                android:layout_width="216dp"
-                android:layout_height="180dp"
-                tools:srcCompat="@drawable/knight"
+                android:layout_width="214dp"
+                android:layout_height="149dp"
                 android:layout_above="@+id/etClass"
-                android:layout_centerHorizontal="true"/>
-
-           <EditText
-               android:layout_width="150dp"
-               android:layout_height="40dp"
-               android:id="@+id/etClass"
-               android:text="Knight"
-               android:gravity="center"
-               android:textSize="20dp"
-               android:textColor="#fff"
-               android:enabled="false"
-               android:layout_above="@+id/etSzakma"
-               android:layout_centerHorizontal="true"
-               />
-            <EditText
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:id="@+id/etSzakma"
-                android:text="Fegyverkovács"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:textColor="#fff"
-                android:enabled="false"
-                android:layout_above="@+id/btnCreate"
                 android:layout_centerHorizontal="true"
                 />
+
+            <EditText
+                android:id="@+id/etClass"
+                android:layout_width="142dp"
+                android:layout_height="70dp"
+                android:layout_above="@+id/etSzakma"
+                android:layout_centerHorizontal="true"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="Knight"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/etSzakma"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_above="@+id/btnCreate"
+                android:layout_centerHorizontal="true"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="Fegyverkovács"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/btnCreate"
@@ -95,7 +96,7 @@
             <Button
                 android:id="@+id/btnSzakmaDown"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_above="@+id/btnCreate"
                 android:layout_toLeftOf="@id/etSzakma"
                 android:background="@drawable/balra_mutato_nyil"
@@ -104,7 +105,7 @@
             <Button
                 android:id="@+id/btnSzakmaUp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:background="@drawable/jobbra_mutato_nyil"
                 android:text=""
                 android:layout_toRightOf="@id/etSzakma"
@@ -113,7 +114,7 @@
             <Button
                 android:id="@+id/btnClassDown"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_above="@+id/btnSzakmaDown"
                 android:layout_toLeftOf="@id/etClass"
                 android:background="@drawable/balra_mutato_nyil"
@@ -121,18 +122,19 @@
 
             <Button
                 android:id="@+id/btnClassUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/jobbra_mutato_nyil"
-                android:text=""
-                android:layout_toRightOf="@id/etClass"
+                android:layout_width="52dp"
+                android:layout_height="70dp"
                 android:layout_above="@+id/btnSzakmaUp"
-                />
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@id/etClass"
+                android:background="@drawable/jobbra_mutato_nyil"
+                android:text="" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="220dp"
             android:layout_height="match_parent"
+
             >
             <EditText
                 android:layout_width="match_parent"
