@@ -22,12 +22,6 @@
         android:background="@drawable/sisak_hatter" />
 
     <Button
-        android:id="@+id/btnBag"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/bag" />
-
-    <Button
         android:id="@+id/btnShopFegyver"
         android:layout_width="100dp"
         android:layout_height="100dp"

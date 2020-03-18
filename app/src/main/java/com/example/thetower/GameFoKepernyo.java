@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class GameFoKepernyo extends AppCompatActivity {
-    private Button btnDuengeon,btnBag,btnKarakter,btnShopPoti,btnShopPancel,btnShopFegyver;
+    private Button btnDuengeon,btnKarakter,btnShopPoti,btnShopPancel,btnShopFegyver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,23 +21,14 @@ public class GameFoKepernyo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent toDungeon = new Intent(GameFoKepernyo.this,DungeonFoKepernyo.class);
                 startActivity(toDungeon);
-                finish();
             }
         });
-        btnBag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toBag = new Intent(GameFoKepernyo.this,KarakterBag.class);
-                startActivity(toBag);
-                finish();
-            }
-        });
+
         btnKarakter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent toKarakter = new Intent(GameFoKepernyo.this,KarakterStatusz.class);
                 startActivity(toKarakter);
-                finish();
             }
         });
 
@@ -80,7 +71,6 @@ public class GameFoKepernyo extends AppCompatActivity {
     }
     private void init() {
         btnDuengeon = findViewById(R.id.btnDuengeon);
-        btnBag = findViewById(R.id.btnBag);
         btnKarakter = findViewById(R.id.btnKarakter);
 
         btnShopFegyver = findViewById(R.id.btnShopFegyver);

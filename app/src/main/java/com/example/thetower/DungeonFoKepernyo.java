@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DungeonFoKepernyo extends AppCompatActivity {
     AdatbazisSegito as = new AdatbazisSegito(this);
     ImageButton ibLvL1, ibLvL2, ibLvL3,ibLvL4;
-    int lvl = 0, level;
+    int lvlszint = 0, level;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,20 +24,19 @@ public class DungeonFoKepernyo extends AppCompatActivity {
         ibLvL1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent lvl1 = new Intent(DungeonFoKepernyo.this, Dungeon.class);
-                startActivity(lvl1);
-                finish();
+                Intent lvl = new Intent(DungeonFoKepernyo.this, Dungeon.class);
+                lvl.putExtra("lvl",lvlszint);
+                startActivity(lvl);
             }
         });
         ibLvL2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (level >= 2) {
-                    lvl =2;
-                Intent lvl2 = new Intent(DungeonFoKepernyo.this, Dungeon.class);
-                lvl2.putExtra("LVL", lvl);
-                startActivity(lvl2);
-                finish();
+                    lvlszint =1;
+                Intent lvl = new Intent(DungeonFoKepernyo.this, Dungeon.class);
+                lvl.putExtra("lvl", lvlszint);
+                startActivity(lvl);
                 }else{
                     Toast.makeText(DungeonFoKepernyo.this, "Nincs elegendő szinted ehez a szinthez, térj vissza kettes szinten!", Toast.LENGTH_SHORT).show();
                 }
@@ -47,11 +46,10 @@ public class DungeonFoKepernyo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (level >= 3){
-                    lvl = 3;
-                Intent lvl3 = new Intent(DungeonFoKepernyo.this,Dungeon.class);
-                lvl3.putExtra("LVL",lvl);
-                startActivity(lvl3);
-                finish();
+                    lvlszint = 2;
+                Intent lvl = new Intent(DungeonFoKepernyo.this,Dungeon.class);
+                lvl.putExtra("lvl",lvlszint);
+                startActivity(lvl);
                 }else{
                     Toast.makeText(DungeonFoKepernyo.this, "Nincs elegendő szinted ehez a szinthez, térj vissza hármas szinten!", Toast.LENGTH_SHORT).show();
                 }
@@ -61,11 +59,10 @@ public class DungeonFoKepernyo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (level >= 4){
-                    lvl = 4;
-                Intent lvl4 = new Intent(DungeonFoKepernyo.this,Dungeon.class);
-                lvl4.putExtra("LVL",lvl);
-                startActivity(lvl4);
-                finish();
+                    lvlszint = 3;
+                Intent lvl = new Intent(DungeonFoKepernyo.this,Dungeon.class);
+                lvl.putExtra("lvl",lvlszint);
+                startActivity(lvl);
             }else{
                 Toast.makeText(DungeonFoKepernyo.this, "Nincs elegendő szinted ehez a szinthez, térj vissza négyes szinten!", Toast.LENGTH_SHORT).show();
             }

@@ -37,7 +37,7 @@ public class Fight extends AppCompatActivity {
         if (clas.equals("Knight")){
             ivFHero.setImageResource(R.drawable.knight);
         }else
-        if (clas.equals("Warrior")){
+        if (clas.equals("Warior")){
             ivFHero.setImageResource(R.drawable.warrior);
         }else
         if (clas.equals("Hunter")){
@@ -51,7 +51,7 @@ public class Fight extends AppCompatActivity {
             as.updateEXP(0);
             as.updateEnableStatuszPoint(enableStatusPoints+1);
         }
-        int lvl = getIntent().getIntExtra("LVL",0);
+        int lvl = getIntent().getIntExtra("lvl",0);
         int szornyFajta = getIntent().getIntExtra("fajta",0);
         switch (lvl){
             case 0:
@@ -127,10 +127,11 @@ public class Fight extends AppCompatActivity {
                 enemy4[3] = 4;
                 break;
         }
-        tvFAtackPower.setText(""+szornyFajta);
+        tvFAtackPower.setText(""+szornyFajta+";"+lvl);
         switch (szornyFajta){
             case 1:
                 ivFEnemy.setImageResource(R.drawable.zombie);
+                tvFEnemyName.setText("Élőhalott");
                 tvFEnemyStamina.setText("Életerő: "+enemy1[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy1[1]);
                 if (sebzes((atackPower+strength),(stamina+20),enemy1[0],enemy1[1])){
@@ -164,6 +165,7 @@ public class Fight extends AppCompatActivity {
                 break;
             case 2:
                 ivFEnemy.setImageResource(R.drawable.skeleton_archer);
+                tvFEnemyName.setText("Élőhalott ijjász");
                 tvFEnemyStamina.setText("Életerő: "+enemy2[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy2[1]);
                 if (sebzes((atackPower+strength),(stamina+20),enemy2[0],enemy2[1])){
@@ -197,6 +199,7 @@ public class Fight extends AppCompatActivity {
                 break;
             case 3:
                 ivFEnemy.setImageResource(R.drawable.imp);
+                tvFEnemyName.setText("Imp");
                 tvFEnemyStamina.setText("Életerő: "+enemy3[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy3[1]);
                 if (sebzes((atackPower+strength),(stamina+20),enemy3[0],enemy3[1])){
@@ -230,6 +233,7 @@ public class Fight extends AppCompatActivity {
                 break;
             case 4:
                 ivFEnemy.setImageResource(R.drawable.minotaurus);
+                tvFEnemyName.setText("Minotaurusz");
                 tvFEnemyStamina.setText("Életerő: "+enemy4[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy4[1]);
                 if (sebzes((atackPower+strength),(stamina+20),enemy4[0],enemy4[1])){
@@ -354,8 +358,6 @@ public class Fight extends AppCompatActivity {
             hosHp = hosHp-szornySebzes;
             szorny++;
         }while(hosHp >= 0);
-        tvFLoot.setVisibility(View.VISIBLE);
-        tvFLoot.setText(""+hos+";"+szorny+";"+hosHp+";"+hosSebzes+";"+szornyHp+";"+szornySebzes);
         if (hos > szorny){
             return false;
         }else if (hos < szorny){

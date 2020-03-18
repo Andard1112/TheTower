@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paper_hatter2"
     tools:context=".ShopFegyver">
 
     <ImageView
@@ -35,9 +36,9 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rendben"
-        android:layout_toRightOf="@id/btnUppgrade"
         android:layout_below="@id/tvFegyverLeiras"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="100dp"/>
+        android:layout_toRightOf="@id/btnUppgrade"
+        android:text="Rendben" />
 </RelativeLayout>

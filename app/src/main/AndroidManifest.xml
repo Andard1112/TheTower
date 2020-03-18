@@ -12,31 +12,16 @@
         <activity android:name=".Fight"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".Dungeon_lvl4"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Dungeon_lvl3"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Dungeon_lvl2"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".Dungeon"
             android:screenOrientation="landscape" />
         <activity
             android:name=".DungeonFoKepernyo"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".ShopPoti"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".ShopPancel"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ShopFegyver"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".KarakterBag"
             android:screenOrientation="landscape" />
         <activity
             android:name=".KarakterStatusz"

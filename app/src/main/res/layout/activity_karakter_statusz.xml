@@ -15,6 +15,15 @@
         />
 
     <EditText
+        android:id="@+id/etKSExp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_above="@id/etKSStamina"
+        android:layout_toRightOf="@id/btnKSStaminaDown"
+        android:enabled="false"
+        android:textColor="@android:color/black"/>
+
+    <EditText
         android:id="@+id/etKSStamina"
         android:layout_width="150dp"
         android:layout_height="40dp"
@@ -188,11 +197,12 @@
         android:layout_toRightOf="@id/ivKSSisak" />
 
     <ImageView
-        android:id="@+id/ivKSPajzs"
-        android:layout_width="100dp"
+        android:id="@+id/ivKSOffHeand"
+        android:layout_width="110dp"
         android:layout_height="200dp"
         android:layout_below="@id/spacePajzsFelett"
         android:layout_toRightOf="@id/ivKSSisak"
-        app:srcCompat="@drawable/pajzs_hatter" />
+        app:srcCompat="@drawable/pajzs_hatter"
+        tools:visibility="invisible" />
 
 </RelativeLayout>
