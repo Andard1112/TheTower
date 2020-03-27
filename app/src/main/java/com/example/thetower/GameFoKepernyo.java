@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class GameFoKepernyo extends AppCompatActivity {
-    private Button btnDuengeon,btnKarakter,btnShopPoti,btnShopPancel,btnShopFegyver;
+    private Button btnDuengeon,btnKarakter,btnShopFegyver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

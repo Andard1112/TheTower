@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class FoKepernyo extends AppCompatActivity {
-    private Button btnContinue, btnNewGame, btnSettings;
+    private Button btnContinue, btnNewGame;
+    private String name;
     AdatbazisSegito as = new AdatbazisSegito(this);
 
     @Override
@@ -18,6 +20,12 @@ public class FoKepernyo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fokepernyo);
         init();
+        Cursor cursor = as.getRow(1);
+        as.open();
+        AdatLekeres(cursor);
+        if (name != null){
+            btnContinue.setEnabled(true);
+        }
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,16 +69,16 @@ public class FoKepernyo extends AppCompatActivity {
 
             }
         });
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
     private void init(){
         btnContinue = findViewById(R.id.btnContinue);
         btnNewGame = findViewById(R.id.btnNewGame);
-        btnSettings = findViewById(R.id.btnSettings);
+    }
+    public void AdatLekeres(Cursor cursor){
+        if (cursor.moveToFirst()){
+            name =  cursor.getString(1);
+            cursor.close();
+        }
     }
 }

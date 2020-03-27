@@ -13,6 +13,27 @@
         android:layout_height="281dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
+        app:srcCompat="@drawable/kard_hatter"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ivFegyverEgykezes1"
+        android:layout_width="189dp"
+        android:layout_height="123dp"
+        android:layout_below="@id/spaceKardfelett"
+
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        app:srcCompat="@drawable/kard_hatter" />
+
+    <ImageView
+        android:id="@+id/ivFegyverEgykezes2"
+        android:layout_width="189dp"
+        android:layout_height="123dp"
+        android:layout_below="@id/ivFegyverEgykezes1"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="0dp"
         app:srcCompat="@drawable/kard_hatter" />
 
     <TextView
@@ -20,8 +41,34 @@
         android:layout_width="542dp"
         android:layout_height="339dp"
         android:layout_alignParentRight="true"
+        android:enabled="false"
         android:gravity="center"
-        android:text="Nem tudom\n nem tudom" />
+        android:text="Nem tudom\n nem tudom"
+        tools:visibility="invisible"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tvFegyverLeirasEgykezes1"
+        android:layout_width="542dp"
+        android:layout_height="123dp"
+        android:layout_below="@id/spaceKardfelett"
+        android:layout_alignParentRight="true"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="Nem tudom\n nem tudom"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tvFegyverLeirasEgykezes2"
+        android:layout_width="542dp"
+        android:layout_height="124dp"
+        android:layout_below="@id/tvFegyverLeirasEgykezes1"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-1dp"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="Nem tudom\n nem tudom"
+        android:textColor="@android:color/black"/>
 
     <Button
         android:id="@+id/btnUppgrade"
@@ -41,4 +88,9 @@
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/btnUppgrade"
         android:text="Rendben" />
+
+    <Space
+        android:id="@+id/spaceKardfelett"
+        android:layout_width="189dp"
+        android:layout_height="67dp" />
 </RelativeLayout>

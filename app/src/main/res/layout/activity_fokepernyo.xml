@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:text="Folytatás"
+            android:enabled="false"
             android:textColor="@android:color/white" />
 
         <Button
@@ -34,14 +35,6 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:text="Új játék"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/btnSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="Beállítások"
             android:textColor="@android:color/white" />
 
     </LinearLayout>

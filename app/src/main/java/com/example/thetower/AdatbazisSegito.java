@@ -34,8 +34,13 @@ public class AdatbazisSegito {
     public static final String COL_CHESTLVL = "chestlvl";
     public static final String COL_GATYALVL = "gatyalvl";
     public static final String COL_CIPOLVL = "cipolvl";
+    public static final String COL_UPGRADECOSTFEGYVER = "upgradeCostFegyver";
+    public static final String COL_UPGRADECOSTSISAK = "upgradeCostSisak";
+    public static final String COL_UPGRADECOSTVERT = "upgradeCostVert";
+    public static final String COL_UPGRADECOSTGATYA = "upgradeCostGatya";
+    public static final String COL_UPGRADECOSTCIPO = "upgradeCostCipo";
 
-    public static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_LIFEPOINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL};
+    public static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_LIFEPOINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
 
     public static final int DATABASE_VERSION = 3;
 
@@ -61,7 +66,12 @@ public class AdatbazisSegito {
                 + COL_FEJESLVL + " integer not null,"
                 + COL_CHESTLVL + " integer not null,"
                 + COL_GATYALVL + " integer not null,"
-                + COL_CIPOLVL + " integer not null"
+                + COL_CIPOLVL + " integer not null,"
+                + COL_UPGRADECOSTFEGYVER + " intent not null,"
+                + COL_UPGRADECOSTSISAK + " intent not null,"
+                + COL_UPGRADECOSTVERT + " intent not null,"
+                + COL_UPGRADECOSTGATYA + " intent not null,"
+                + COL_UPGRADECOSTCIPO + " intent not null"
             + ");";
 
     private final Context context;
@@ -87,7 +97,7 @@ public class AdatbazisSegito {
         myDBHelper.close();
     }
 
-    public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, double lifepoint, int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level, int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl, int cipoLvl){
+    public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, double lifepoint, int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level, int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl, int cipoLvl, int upgradeCostFegyver, int upgradeCostSisak, int upgradeCostVert, int upgradeCostGatya, int upgradeCostCipo){
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_ID, id);
         initialValues.put(COL_NAME, name);
@@ -110,6 +120,11 @@ public class AdatbazisSegito {
         initialValues.put(COL_CHESTLVL,chestLvl);
         initialValues.put(COL_GATYALVL,gatyaLvl);
         initialValues.put(COL_CIPOLVL,cipoLvl);
+        initialValues.put(COL_UPGRADECOSTFEGYVER, upgradeCostFegyver);
+        initialValues.put(COL_UPGRADECOSTSISAK,upgradeCostSisak);
+        initialValues.put(COL_UPGRADECOSTVERT,upgradeCostVert);
+        initialValues.put(COL_UPGRADECOSTGATYA,upgradeCostGatya);
+        initialValues.put(COL_UPGRADECOSTCIPO,upgradeCostCipo);
 
         return db.insert(TABLE_NAME, null,initialValues);
     }
@@ -226,6 +241,42 @@ public class AdatbazisSegito {
         String where = KEY_ID + "=" + 1;
         ContentValues newValues = new ContentValues();
         newValues.put(COL_ENABLESTATUSPOINT,statuszPoint);
+        return db.update(TABLE_NAME, newValues,where,null) != 0;
+    }
+    public boolean updateRowArmor(int armor){
+        String where = KEY_ID + "=" + 1;
+        ContentValues newValues = new ContentValues();
+        newValues.put(COL_ARMOR,armor);
+        return db.update(TABLE_NAME, newValues,where,null) != 0;
+    }
+    public boolean updateRowUpgradeCostFegyver(int upgradeCostFegyver){
+        String where = KEY_ID + "=" + 1;
+        ContentValues newValues = new ContentValues();
+        newValues.put(COL_UPGRADECOSTFEGYVER,upgradeCostFegyver);
+        return db.update(TABLE_NAME, newValues,where,null) != 0;
+    }
+    public boolean updateRowUpgradeCostSisak(int upgradeCostSisak){
+        String where = KEY_ID + "=" + 1;
+        ContentValues newValues = new ContentValues();
+        newValues.put(COL_UPGRADECOSTSISAK,upgradeCostSisak);
+        return db.update(TABLE_NAME, newValues,where,null) != 0;
+    }
+    public boolean updateRowUpgradeCostVert(int upgradeCostVert){
+        String where = KEY_ID + "=" + 1;
+        ContentValues newValues = new ContentValues();
+        newValues.put(COL_UPGRADECOSTVERT,upgradeCostVert);
+        return db.update(TABLE_NAME, newValues,where,null) != 0;
+    }
+    public boolean updateRowUpgradeCostGatya(int upgradeCostGatya){
+        String where = KEY_ID + "=" + 1;
+        ContentValues newValues = new ContentValues();
+        newValues.put(COL_UPGRADECOSTGATYA,upgradeCostGatya);
+        return db.update(TABLE_NAME, newValues,where,null) != 0;
+    }
+    public boolean updateRowUpgradeCostCipo(int upgradeCostCipo){
+        String where = KEY_ID + "=" + 1;
+        ContentValues newValues = new ContentValues();
+        newValues.put(COL_UPGRADECOSTCIPO,upgradeCostCipo);
         return db.update(TABLE_NAME, newValues,where,null) != 0;
     }
     //adatbázis elem lekérése

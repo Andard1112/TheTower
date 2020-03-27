@@ -33,9 +33,14 @@ public class KarakterStatusz extends AppCompatActivity {
         }else
         if (clas.equals("Warior")){
             ivKSCharacterPortre.setImageResource(R.drawable.warrior);
+            ivKSOffHeand.setEnabled(false);
+            ivKSOffHeand.setVisibility(View.INVISIBLE);
         }else
         if (clas.equals("Hunter")){
             ivKSCharacterPortre.setImageResource(R.drawable.hunter);
+            ivKSKard.setImageResource(R.drawable.bow);
+            ivKSOffHeand.setEnabled(false);
+            ivKSOffHeand.setVisibility(View.INVISIBLE);
         }else
         if (clas.equals("Rouge")){
             ivKSCharacterPortre.setImageResource(R.drawable.rouge);
