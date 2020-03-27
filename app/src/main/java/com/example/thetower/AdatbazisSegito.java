@@ -20,7 +20,7 @@ public class AdatbazisSegito {
     private static final String COL_DEFFENSE = "deffense";
     private static final String COL_AGILITY = "agility";
     private static final String COL_ARMOR = "armor";
-    private static final String COL_LIFEPOINT = "lifepoint";
+    private static final String COL_DUNGEONSZINT = "dungeonSzint";
     private static final String COL_ENABLESTATUSPOINT = "enableStatusPoint";
     private static final String COL_ATACKPOWER = "atackPower";
     private static final String COL_EXP = "exp";
@@ -40,7 +40,7 @@ public class AdatbazisSegito {
     private static final String COL_UPGRADECOSTGATYA = "upgradeCostGatya";
     private static final String COL_UPGRADECOSTCIPO = "upgradeCostCipo";
 
-    private static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_LIFEPOINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
+    private static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_DUNGEONSZINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
 
     private static final int DATABASE_VERSION = 3;
 
@@ -54,7 +54,7 @@ public class AdatbazisSegito {
                 + COL_DEFFENSE + " integer not null, "
                 + COL_AGILITY + " integer not null, "
                 + COL_ARMOR + " integer not null default 0, "
-                + COL_LIFEPOINT + " double not null, "
+                + COL_DUNGEONSZINT + " integer not null, "
                 + COL_ENABLESTATUSPOINT + " integer, "
                 + COL_ATACKPOWER + " integer not null, "
                 + COL_EXP + " integer not null,"
@@ -97,7 +97,7 @@ public class AdatbazisSegito {
         myDBHelper.close();
     }
 
-    public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, double lifepoint, int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level, int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl, int cipoLvl, int upgradeCostFegyver, int upgradeCostSisak, int upgradeCostVert, int upgradeCostGatya, int upgradeCostCipo){
+    public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, int dungeonSzint, int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level, int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl, int cipoLvl, int upgradeCostFegyver, int upgradeCostSisak, int upgradeCostVert, int upgradeCostGatya, int upgradeCostCipo){
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_ID, id); //0
         initialValues.put(COL_NAME, name); //1
@@ -107,7 +107,7 @@ public class AdatbazisSegito {
         initialValues.put(COL_DEFFENSE, deffense); //5
         initialValues.put(COL_AGILITY, agility); //6
         initialValues.put(COL_ARMOR, armor); //7
-        initialValues.put(COL_LIFEPOINT, lifepoint); //8
+        initialValues.put(COL_DUNGEONSZINT, dungeonSzint); //8
         initialValues.put(COL_ENABLESTATUSPOINT, enableStatusPoints); //9
         initialValues.put(COL_ATACKPOWER, atackPower); //10
         initialValues.put(COL_EXP, exp); //11
@@ -146,12 +146,6 @@ public class AdatbazisSegito {
         return c;
     }
     //adatbázis elem frissítés
-    public boolean updateRowHealth(int life) {
-        String where = KEY_ID + "=" + 1;
-        ContentValues newValues = new ContentValues();
-        newValues.put(COL_STAMINA, life);
-        return db.update(TABLE_NAME, newValues, where, null) != 0;
-    }
     public boolean updateAgility(int agility){
         String where = KEY_ID + "=" + 1;
         ContentValues newValues = new ContentValues();
@@ -201,16 +195,11 @@ public class AdatbazisSegito {
         newValues.put(COL_FEJESLVL, lvl);
         return db.update(TABLE_NAME, newValues, where, null) != 0;
     }
-    public boolean updateRowChest(int lvl) {
+
+    public boolean updateRowDungeonSzint(int lvl) {
         String where = KEY_ID + "=" + 1;
         ContentValues newValues = new ContentValues();
-        newValues.put(COL_CHESTLVL, lvl);
-        return db.update(TABLE_NAME, newValues, where, null) != 0;
-    }
-    public boolean updateRowGatya(int lvl) {
-        String where = KEY_ID + "=" + 1;
-        ContentValues newValues = new ContentValues();
-        newValues.put(COL_GATYALVL, lvl);
+        newValues.put(COL_DUNGEONSZINT, lvl);
         return db.update(TABLE_NAME, newValues, where, null) != 0;
     }
     public boolean updateRowCipo(int lvl) {
@@ -278,16 +267,6 @@ public class AdatbazisSegito {
         ContentValues newValues = new ContentValues();
         newValues.put(COL_UPGRADECOSTCIPO,upgradeCostCipo);
         return db.update(TABLE_NAME, newValues,where,null) != 0;
-    }
-    //adatbázis elem lekérése
-    public Cursor getStamina(long rowId) {
-        String where = KEY_ID + "=" + rowId;
-        Cursor c =     db.query(true, TABLE_NAME, ALL_KEYS,
-                where, null, null, null, null, null);
-        if (c != null) {
-            c.moveToFirst();
-        }
-        return c;
     }
     private static class DatabaseHelper extends SQLiteOpenHelper
     {

@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 public class Fight extends AppCompatActivity {
     AdatbazisSegito as = new AdatbazisSegito(this);
-    private int stamina,strength,agility,armor, enableStatusPoints, atackPower, cash, level, exp, kardlvl, pajzslvl, fejeslvl, chestlvl, gatyalvl, cipolvl;
+    private int stamina,strength,agility,armor,dungeonSzint, enableStatusPoints, atackPower, cash, level, exp, kardlvl, pajzslvl, fejeslvl, chestlvl, gatyalvl, cipolvl;
     private String name,szakma, clas;
-    private double deffense,crit,lifepoint;
+    private double deffense,crit;
     int[] enemy1 = new int[4],enemy2= new int[4],enemy3= new int[4],enemy4= new int[4];
     TextView tvFName,tvFStamina,tvFStrength,tvFAgility,tvFAtackPower,tvFArmor,tvFCrit,tvFMiss,tvFEnemyName,tvFEnemyStamina,tvFEnemyStrength,tvFLoot;
     ImageView ivFHero,ivFEnemy;
@@ -51,9 +51,8 @@ public class Fight extends AppCompatActivity {
             as.updateEXP(0);
             as.updateEnableStatuszPoint(enableStatusPoints+1);
         }
-        int lvl = getIntent().getIntExtra("lvl",0);
         int szornyFajta = getIntent().getIntExtra("fajta",0);
-        switch (lvl){
+        switch (dungeonSzint){
             case 0:
                 enemy1[0] = 20;
                 enemy1[1] = 1;
@@ -127,7 +126,7 @@ public class Fight extends AppCompatActivity {
                 enemy4[3] = 4;
                 break;
         }
-        //tvFAtackPower.setText(""+szornyFajta+";"+lvl);
+        tvFAtackPower.setText(""+szornyFajta+";"+dungeonSzint);
         switch (szornyFajta){
             case 1:
                 ivFEnemy.setImageResource(R.drawable.zombie);
@@ -289,6 +288,12 @@ public class Fight extends AppCompatActivity {
                         as.updateEXP(exp+enemy4[3]);
                         break;
                 }
+                if (exp>=20) {
+                    as.updateLvL(level + 1);
+                    exp -= 20;
+                    as.updateEXP(exp);
+                    as.updateEnableStatuszPoint(enableStatusPoints+1);
+                }
                 startActivity(visszaDungeon);
                 finish();
             }
@@ -306,7 +311,7 @@ public class Fight extends AppCompatActivity {
             deffense = cursor.getInt(5);
             agility = cursor.getInt(6);
             armor = cursor.getInt(7);
-            lifepoint = cursor.getDouble(8);
+            dungeonSzint = cursor.getInt(8);
             enableStatusPoints = cursor.getInt(9);
             atackPower = cursor.getInt(10);
             exp = cursor.getInt(11);
@@ -324,7 +329,7 @@ public class Fight extends AppCompatActivity {
             tvFStrength.setText("Strength: "+strength);
             tvFAgility.setText("Agility: "+agility);
             tvFArmor.setText("Armor: "+armor);
-            tvFAtackPower.setText("Sebzés:: "+atackPower);
+            //tvFAtackPower.setText("Sebzés:: "+atackPower);
             cursor.close();
         }
     }

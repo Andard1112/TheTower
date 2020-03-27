@@ -203,12 +203,12 @@ public class ShopPancel extends AppCompatActivity {
                     cash -= upgradeCostGatya;
                     as.updateCash(cash);
                     upgradeCostGatya += (upgradeCostGatya-1);
-                    as.updateRowUpgradeCostFegyver(upgradeCostGatya);
+                    as.updateRowUpgradeCostGatya(upgradeCostGatya);
                 }else{
                     cash -= upgradeCostGatya;
                     as.updateCash(cash);
                     upgradeCostGatya += upgradeCostGatya;
-                    as.updateRowUpgradeCostFegyver(upgradeCostGatya);
+                    as.updateRowUpgradeCostGatya(upgradeCostGatya);
                 }
                 armor +=1;
                 as.updateRowArmor(armor);
@@ -219,7 +219,7 @@ public class ShopPancel extends AppCompatActivity {
                 cash -= upgradeCostGatya;
                 as.updateCash(cash);
                 upgradeCostGatya += upgradeCostGatya;
-                as.updateRowUpgradeCostFegyver(upgradeCostGatya);
+                as.updateRowUpgradeCostGatya(upgradeCostGatya);
                 armor +=2;
                 as.updateRowArmor(armor);
                 gatyaLvl += 1;
@@ -229,7 +229,7 @@ public class ShopPancel extends AppCompatActivity {
                 cash -= upgradeCostGatya;
                 as.updateCash(cash);
                 upgradeCostGatya += upgradeCostGatya;
-                as.updateRowUpgradeCostFegyver(upgradeCostGatya);
+                as.updateRowUpgradeCostGatya(upgradeCostGatya);
                 armor +=1;
                 as.updateRowArmor(armor);
                 gatyaLvl += 1;

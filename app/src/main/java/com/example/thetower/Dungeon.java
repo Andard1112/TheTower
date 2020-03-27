@@ -3,6 +3,7 @@ package com.example.thetower;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,14 +12,14 @@ import java.util.Random;
 
 public class Dungeon extends AppCompatActivity {
     Button btnUp, btnRight, btnDown, btnLeft, btnEnemy;
-    int x = 0, y = 0, enemy, lvl;
+    int x = 0, y = 0, enemy, dungeonSzint;
     Random random = new Random();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dungeon);
         init();
+
         btnUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

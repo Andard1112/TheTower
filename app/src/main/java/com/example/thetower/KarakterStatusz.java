@@ -51,7 +51,8 @@ public class KarakterStatusz extends AppCompatActivity {
         }
         if (exp>=20) {
             as.updateLvL(level + 1);
-            as.updateEXP(0);
+            exp -= 20;
+            as.updateEXP(exp);
             as.updateEnableStatuszPoint(enableStatusPoints+1);
         }
         enableStatusPoints(enableStatusPoints);
