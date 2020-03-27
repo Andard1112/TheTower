@@ -57,8 +57,7 @@
                 android:layout_width="214dp"
                 android:layout_height="149dp"
                 android:layout_above="@+id/etClass"
-                android:layout_centerHorizontal="true"
-                />
+                android:layout_centerHorizontal="true" />
 
             <EditText
                 android:id="@+id/etClass"
@@ -69,6 +68,7 @@
                 android:enabled="false"
                 android:gravity="center"
                 android:text="Knight"
+
                 android:textColor="#000000"
                 android:textSize="20dp" />
 
@@ -99,25 +99,25 @@
                 android:layout_height="70dp"
                 android:layout_above="@+id/btnCreate"
                 android:layout_toLeftOf="@id/etSzakma"
-                android:background="@drawable/balra_mutato_nyil"
+                android:background="@drawable/left_arrow"
                 android:text="" />
 
             <Button
                 android:id="@+id/btnSzakmaUp"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
-                android:background="@drawable/jobbra_mutato_nyil"
-                android:text=""
-                android:layout_toRightOf="@id/etSzakma"
                 android:layout_above="@+id/btnCreate"
-                />
+                android:layout_toRightOf="@id/etSzakma"
+                android:background="@drawable/right_arrow"
+                android:text="" />
+
             <Button
                 android:id="@+id/btnClassDown"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
                 android:layout_above="@+id/btnSzakmaDown"
                 android:layout_toLeftOf="@id/etClass"
-                android:background="@drawable/balra_mutato_nyil"
+                android:background="@drawable/left_arrow"
                 android:text="" />
 
             <Button
@@ -127,7 +127,7 @@
                 android:layout_above="@+id/btnSzakmaUp"
                 android:layout_marginLeft="2dp"
                 android:layout_toRightOf="@id/etClass"
-                android:background="@drawable/jobbra_mutato_nyil"
+                android:background="@drawable/right_arrow"
                 android:text="" />
         </RelativeLayout>
 

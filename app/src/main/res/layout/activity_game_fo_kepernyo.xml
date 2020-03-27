@@ -9,17 +9,17 @@
 
     <Button
         android:id="@+id/btnDuengeon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="313dp"
+        android:layout_height="221dp"
         android:layout_centerInParent="true"
-        android:text="Dungeon" />
+        android:background="@drawable/dungeon" />
 
     <Button
         android:id="@+id/btnKarakter"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/sisak_hatter" />
+        android:background="@drawable/buff" />
 
     <Button
         android:id="@+id/btnShopFegyver"
@@ -27,6 +27,6 @@
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/kovacs" />
+        android:background="@drawable/blacksmith" />
 
 </RelativeLayout>

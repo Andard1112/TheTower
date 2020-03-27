@@ -46,10 +46,10 @@ public class characterCreation extends AppCompatActivity{
                     etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
                     switch (clas){
                         case 2:
-                            ivcharacter.setImageResource(R.drawable.warrior);
+                            ivcharacter.setImageResource(R.drawable.spartan);
                             break;
                         case 3:
-                            ivcharacter.setImageResource(R.drawable.rouge);
+                            ivcharacter.setImageResource(R.drawable.ninja);
                             break;
                         case 1:
                             ivcharacter.setImageResource(R.drawable.knight);
@@ -76,10 +76,10 @@ public class characterCreation extends AppCompatActivity{
                     etClassInfo.setText("Agility:"+classes.getAgility()+"\nErő:"+classes.getStrength()+"\nKitartás:"+classes.getStamina()+"\nTámadási erő:"+classes.getAtackPower()+"\nVédekezés:"+classes.getDeffense()+"\n"+classes.getLeiras());
                     switch (clas){
                         case 2:
-                            ivcharacter.setImageResource(R.drawable.warrior);
+                            ivcharacter.setImageResource(R.drawable.spartan);
                             break;
                         case 3:
-                            ivcharacter.setImageResource(R.drawable.rouge);
+                            ivcharacter.setImageResource(R.drawable.ninja);
                             break;
                         case 4:
                             ivcharacter.setImageResource(R.drawable.hunter);

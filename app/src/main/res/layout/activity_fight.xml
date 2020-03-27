@@ -12,14 +12,14 @@
         android:id="@+id/ivFHero"
         android:layout_width="365dp"
         android:layout_height="155dp"
-        app:srcCompat="@drawable/warrior" />
+        app:srcCompat="@drawable/spartan" />
 
     <ImageView
         android:id="@+id/ivFEnemy"
         android:layout_width="365dp"
         android:layout_height="155dp"
         android:layout_toRightOf="@+id/ivFHero"
-        app:srcCompat="@drawable/minotaurus" />
+        app:srcCompat="@drawable/minotaur" />
 
     <TextView
         android:id="@+id/tvFName"

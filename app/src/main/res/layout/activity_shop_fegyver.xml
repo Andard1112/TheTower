@@ -13,7 +13,7 @@
         android:layout_height="281dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@drawable/kard_hatter"
+        app:srcCompat="@drawable/sword"
         tools:visibility="invisible" />
 
     <ImageView
@@ -24,7 +24,8 @@
 
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp"
-        app:srcCompat="@drawable/kard_hatter" />
+        app:srcCompat="@drawable/dagger"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/ivFegyverEgykezes2"
@@ -34,7 +35,8 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="0dp"
-        app:srcCompat="@drawable/kard_hatter" />
+        app:srcCompat="@drawable/dagger"
+        tools:visibility="invisible" />
 
     <TextView
         android:id="@+id/tvFegyverLeiras"

@@ -35,7 +35,7 @@ public class ShopFegyver extends AppCompatActivity {
             ivFegyverEgykezes1.setEnabled(true);
             ivFegyverEgykezes2.setVisibility(View.VISIBLE);
             ivFegyverEgykezes2.setEnabled(true);
-            ivFegyverEgykezes2.setImageResource(R.drawable.pajzs_hatter);
+            ivFegyverEgykezes2.setImageResource(R.drawable.shield);
             tvFegyverLeiras.setVisibility(View.INVISIBLE);
             tvFegyverLeirasEgykezes1.setVisibility(View.VISIBLE);
             tvFegyverLeirasEgykezes2.setVisibility(View.VISIBLE);
@@ -113,7 +113,7 @@ public class ShopFegyver extends AppCompatActivity {
                     ivFegyverEgykezes1.setEnabled(true);
                     ivFegyverEgykezes2.setVisibility(View.VISIBLE);
                     ivFegyverEgykezes2.setEnabled(true);
-                    ivFegyverEgykezes2.setImageResource(R.drawable.pajzs_hatter);
+                    ivFegyverEgykezes2.setImageResource(R.drawable.shield);
                     tvFegyverLeiras.setVisibility(View.INVISIBLE);
                     tvFegyverLeirasEgykezes1.setVisibility(View.VISIBLE);
                     tvFegyverLeirasEgykezes2.setVisibility(View.VISIBLE);
@@ -242,7 +242,7 @@ public class ShopFegyver extends AppCompatActivity {
                     ivFegyverEgykezes1.setEnabled(true);
                     ivFegyverEgykezes2.setVisibility(View.VISIBLE);
                     ivFegyverEgykezes2.setEnabled(true);
-                    ivFegyverEgykezes2.setImageResource(R.drawable.pajzs_hatter);
+                    ivFegyverEgykezes2.setImageResource(R.drawable.shield);
                     tvFegyverLeiras.setVisibility(View.INVISIBLE);
                     tvFegyverLeirasEgykezes1.setVisibility(View.VISIBLE);
                     tvFegyverLeirasEgykezes2.setVisibility(View.VISIBLE);
@@ -340,7 +340,7 @@ public class ShopFegyver extends AppCompatActivity {
                     ivFegyverEgykezes1.setEnabled(true);
                     ivFegyverEgykezes2.setVisibility(View.VISIBLE);
                     ivFegyverEgykezes2.setEnabled(true);
-                    ivFegyverEgykezes2.setImageResource(R.drawable.pajzs_hatter);
+                    ivFegyverEgykezes2.setImageResource(R.drawable.shield);
                     tvFegyverLeiras.setVisibility(View.INVISIBLE);
                     tvFegyverLeirasEgykezes1.setVisibility(View.VISIBLE);
                     tvFegyverLeirasEgykezes2.setVisibility(View.VISIBLE);
@@ -444,8 +444,8 @@ public class ShopFegyver extends AppCompatActivity {
             szakma = cursor.getString(2);
             armor = cursor.getInt(7);
             ap = cursor.getInt(10);
-            clas = cursor.getString(11);
-            cash = cursor.getInt(12);
+            clas = cursor.getString(12);
+            cash = cursor.getInt(13);
             fegyverlvl = cursor.getInt(15);
             pajzsLvl = cursor.getInt(16);
             upgradeCostFegyver = cursor.getInt(21);

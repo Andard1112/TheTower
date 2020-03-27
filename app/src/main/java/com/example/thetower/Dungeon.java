@@ -104,13 +104,13 @@ public class Dungeon extends AppCompatActivity {
                     btnEnemy.setBackgroundResource(R.drawable.zombie);
                     break;
                 case 2:
-                    btnEnemy.setBackgroundResource(R.drawable.skeleton_archer);
+                    btnEnemy.setBackgroundResource(R.drawable.skeleton);
                     break;
                 case 3:
                     btnEnemy.setBackgroundResource(R.drawable.imp);
                     break;
                 case 4:
-                    btnEnemy.setBackgroundResource(R.drawable.minotaurus);
+                    btnEnemy.setBackgroundResource(R.drawable.minotaur);
                     break;
             }
             btnEnemy.setOnClickListener(new View.OnClickListener() {

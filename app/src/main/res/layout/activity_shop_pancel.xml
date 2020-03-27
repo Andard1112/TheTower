@@ -11,28 +11,28 @@
         android:id="@+id/ivASPSisak"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/sisak_hatter" />
+        app:srcCompat="@drawable/helmet" />
 
     <ImageView
         android:id="@+id/ivASPVert"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@id/ivASPSisak"
-        app:srcCompat="@drawable/mellvert_hatter" />
+        app:srcCompat="@drawable/armor" />
 
     <ImageView
         android:id="@+id/ivASPGatya"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@id/ivASPVert"
-        app:srcCompat="@drawable/nadrag_hatter" />
+        app:srcCompat="@drawable/jeans" />
 
     <ImageView
         android:id="@+id/ivASPCipo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@id/ivASPGatya"
-        app:srcCompat="@drawable/csizma_hatter" />
+        app:srcCompat="@drawable/shoe" />
 
     <TextView
         android:id="@+id/tvASPSisakLeiras"

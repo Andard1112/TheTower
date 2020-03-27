@@ -32,7 +32,7 @@ public class KarakterStatusz extends AppCompatActivity {
             ivKSOffHeand.setEnabled(true);
         }else
         if (clas.equals("Warior")){
-            ivKSCharacterPortre.setImageResource(R.drawable.warrior);
+            ivKSCharacterPortre.setImageResource(R.drawable.spartan);
             ivKSOffHeand.setEnabled(false);
             ivKSOffHeand.setVisibility(View.INVISIBLE);
         }else
@@ -43,7 +43,7 @@ public class KarakterStatusz extends AppCompatActivity {
             ivKSOffHeand.setVisibility(View.INVISIBLE);
         }else
         if (clas.equals("Rouge")){
-            ivKSCharacterPortre.setImageResource(R.drawable.rouge);
+            ivKSCharacterPortre.setImageResource(R.drawable.ninja);
             ivKSOffHeand.setImageResource(R.drawable.dagger);
             ivKSOffHeand.setVisibility(View.VISIBLE);
             ivKSOffHeand.setEnabled(true);
