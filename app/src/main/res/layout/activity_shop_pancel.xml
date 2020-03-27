@@ -4,17 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paper_hatter2"
     tools:context=".ShopPancel">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+    <ImageView
+        android:id="@+id/ivASPSisak"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/sisak_hatter" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+    <ImageView
+        android:id="@+id/ivASPVert"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivASPSisak"
+        app:srcCompat="@drawable/mellvert_hatter" />
+
+    <ImageView
+        android:id="@+id/ivASPGatya"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivASPVert"
+        app:srcCompat="@drawable/nadrag_hatter" />
+
+    <ImageView
+        android:id="@+id/ivASPCipo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/ivASPGatya"
+        app:srcCompat="@drawable/csizma_hatter" />
+
+    <TextView
+        android:id="@+id/tvASPSisakLeiras"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/ivASPSisak"
+        android:gravity="center"
+        android:text="Sisak leírása" />
+
+    <TextView
+        android:id="@+id/tvASPVertLeiras"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvASPSisakLeiras"
+        android:layout_toRightOf="@id/ivASPSisak"
+        android:gravity="center"
+        android:text="Sisak leírása" />
+
+    <TextView
+        android:id="@+id/tvASPGatyaLeiras"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvASPVertLeiras"
+        android:layout_toRightOf="@id/ivASPSisak"
+        android:gravity="center"
+        android:text="Sisak leírása" />
+
+    <TextView
+        android:id="@+id/tvASPCipoLeiras"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvASPGatyaLeiras"
+        android:layout_toRightOf="@id/ivASPSisak"
+        android:gravity="center"
+        android:text="Sisak leírása" />
+
+    <Button
+        android:id="@+id/btnASPSisak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/tvASPSisakLeiras"
+        android:text="Fejlesztés" />
+
+    <Button
+        android:id="@+id/btnASPVert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnASPSisak"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/tvASPSisakLeiras"
+        android:text="Fejlesztés" />
+
+    <Button
+        android:id="@+id/btnASPGatya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnASPVert"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/tvASPSisakLeiras"
+        android:text="Fejlesztés" />
+
+    <Button
+        android:id="@+id/btnASPCipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnASPGatya"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/tvASPSisakLeiras"
+        android:text="Fejlesztés" />
 </RelativeLayout>

@@ -48,7 +48,7 @@ public class GameFoKepernyo extends AppCompatActivity {
                         //Positive buton click
                         Intent toShopFegyver = new Intent(GameFoKepernyo.this,ShopFegyver.class);
                         startActivity(toShopFegyver);
-                        finish();
+
                     }
                 });
                 // Set the alert dialog no button click listener
@@ -58,7 +58,7 @@ public class GameFoKepernyo extends AppCompatActivity {
                         //Negative buton click
                         Intent toShopPancel = new Intent(GameFoKepernyo.this,ShopPancel.class);
                         startActivity(toShopPancel);
-                        finish();
+
                     }
                 });
                 AlertDialog dialog = builder.create();

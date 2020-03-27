@@ -134,7 +134,7 @@ public class Fight extends AppCompatActivity {
                 tvFEnemyName.setText("Élőhalott");
                 tvFEnemyStamina.setText("Életerő: "+enemy1[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy1[1]);
-                if (sebzes((atackPower+strength),(stamina+20),enemy1[0],enemy1[1])){
+                if (sebzes((atackPower+strength),(stamina+20),armor,enemy1[0],enemy1[1])){
                     tvFLoot.setVisibility(View.VISIBLE);
                     tvFLoot.setText("Arany: "+enemy1[2]+"\nTapasztalat: "+enemy1[3]);
                     btnFOK.setVisibility(View.VISIBLE);
@@ -168,7 +168,7 @@ public class Fight extends AppCompatActivity {
                 tvFEnemyName.setText("Élőhalott ijjász");
                 tvFEnemyStamina.setText("Életerő: "+enemy2[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy2[1]);
-                if (sebzes((atackPower+strength),(stamina+20),enemy2[0],enemy2[1])){
+                if (sebzes((atackPower+strength),(stamina+20),armor,enemy2[0],enemy2[1])){
                     tvFLoot.setVisibility(View.VISIBLE);
                     tvFLoot.setText("Arany: "+enemy2[2]+"\nTapasztalat: "+enemy2[3]);
                     btnFOK.setVisibility(View.VISIBLE);
@@ -202,7 +202,7 @@ public class Fight extends AppCompatActivity {
                 tvFEnemyName.setText("Imp");
                 tvFEnemyStamina.setText("Életerő: "+enemy3[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy3[1]);
-                if (sebzes((atackPower+strength),(stamina+20),enemy3[0],enemy3[1])){
+                if (sebzes((atackPower+strength),(stamina+20),armor,enemy3[0],enemy3[1])){
                     tvFLoot.setVisibility(View.VISIBLE);
                     tvFLoot.setText("Arany: "+enemy3[2]+"\nTapasztalat: "+enemy3[3]);
                     btnFOK.setVisibility(View.VISIBLE);
@@ -236,7 +236,7 @@ public class Fight extends AppCompatActivity {
                 tvFEnemyName.setText("Minotaurusz");
                 tvFEnemyStamina.setText("Életerő: "+enemy4[0]);
                 tvFEnemyStrength.setText("Sebzés: "+enemy4[1]);
-                if (sebzes((atackPower+strength),(stamina+20),enemy4[0],enemy4[1])){
+                if (sebzes((atackPower+strength),(stamina+20),armor,enemy4[0],enemy4[1])){
                     tvFLoot.setVisibility(View.VISIBLE);
                     tvFLoot.setText("Arany: "+enemy4[2]+"\nTapasztalat: "+enemy4[3]);
                     btnFOK.setVisibility(View.VISIBLE);
@@ -346,10 +346,13 @@ public class Fight extends AppCompatActivity {
         ivFHero = findViewById(R.id.ivFHero);
         tvFAtackPower = findViewById(R.id.tvFAtackPower);
     }
-    private boolean sebzes(int hosSebzes,int hosHp, int szornyHp, int szornySebzes ){
+    private boolean sebzes(int hosSebzes,int hosHp,int hosArmor, int szornyHp, int szornySebzes ){
         int hos=0;
         int szorny=0;
-
+        szornySebzes -= hosArmor;
+        if (szornySebzes <0){
+            szornySebzes = 0;
+        }
         do {
             szornyHp = szornyHp-hosSebzes;
             hos++;

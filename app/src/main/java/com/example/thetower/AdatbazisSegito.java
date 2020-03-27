@@ -8,41 +8,41 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class AdatbazisSegito {
-    public static final String DATABASE_NAME = "the_tower.db";
-    public static final String TABLE_NAME = "character";
+    private static final String DATABASE_NAME = "the_tower.db";
+    private static final String TABLE_NAME = "character";
 
-    public static final String KEY_ID = "_id";
+    private static final String KEY_ID = "_id";
 
-    public static final String COL_NAME = "name";
-    public static final String COL_SZAKMA = "szakma";
-    public static final String COL_STAMINA = "stamina";
-    public static final String COL_STRENGTH = "strength";
-    public static final String COL_DEFFENSE = "deffense";
-    public static final String COL_AGILITY = "agility";
-    public static final String COL_ARMOR = "armor";
-    public static final String COL_LIFEPOINT = "lifepoint";
-    public static final String COL_ENABLESTATUSPOINT = "enableStatusPoint";
-    public static final String COL_ATACKPOWER = "atackPower";
-    public static final String COL_EXP = "exp";
-    public static final String COL_CLAS = "clas";
-    public static final String COL_CASH = "cash";
-    public static final String COL_LEVEL = "level";
+    private static final String COL_NAME = "name";
+    private static final String COL_SZAKMA = "szakma";
+    private static final String COL_STAMINA = "stamina";
+    private static final String COL_STRENGTH = "strength";
+    private static final String COL_DEFFENSE = "deffense";
+    private static final String COL_AGILITY = "agility";
+    private static final String COL_ARMOR = "armor";
+    private static final String COL_LIFEPOINT = "lifepoint";
+    private static final String COL_ENABLESTATUSPOINT = "enableStatusPoint";
+    private static final String COL_ATACKPOWER = "atackPower";
+    private static final String COL_EXP = "exp";
+    private static final String COL_CLAS = "clas";
+    private static final String COL_CASH = "cash";
+    private static final String COL_LEVEL = "level";
 
-    public static final String COL_KARDLVL = "kardlvl";
-    public static final String COL_PAJZSLVL = "pajzslvl";
-    public static final String COL_FEJESLVL = "fejeslvl";
-    public static final String COL_CHESTLVL = "chestlvl";
-    public static final String COL_GATYALVL = "gatyalvl";
-    public static final String COL_CIPOLVL = "cipolvl";
-    public static final String COL_UPGRADECOSTFEGYVER = "upgradeCostFegyver";
-    public static final String COL_UPGRADECOSTSISAK = "upgradeCostSisak";
-    public static final String COL_UPGRADECOSTVERT = "upgradeCostVert";
-    public static final String COL_UPGRADECOSTGATYA = "upgradeCostGatya";
-    public static final String COL_UPGRADECOSTCIPO = "upgradeCostCipo";
+    private static final String COL_KARDLVL = "kardlvl";
+    private static final String COL_PAJZSLVL = "pajzslvl";
+    private static final String COL_FEJESLVL = "fejeslvl";
+    private static final String COL_CHESTLVL = "chestlvl";
+    private static final String COL_GATYALVL = "gatyalvl";
+    private static final String COL_CIPOLVL = "cipolvl";
+    private static final String COL_UPGRADECOSTFEGYVER = "upgradeCostFegyver";
+    private static final String COL_UPGRADECOSTSISAK = "upgradeCostSisak";
+    private static final String COL_UPGRADECOSTVERT = "upgradeCostVert";
+    private static final String COL_UPGRADECOSTGATYA = "upgradeCostGatya";
+    private static final String COL_UPGRADECOSTCIPO = "upgradeCostCipo";
 
-    public static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_LIFEPOINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
+    private static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_LIFEPOINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
 
-    public static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 3;
 
     private static final String DATABASE_CREATE_SQL =
             "create table " + TABLE_NAME
@@ -99,32 +99,32 @@ public class AdatbazisSegito {
 
     public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, double lifepoint, int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level, int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl, int cipoLvl, int upgradeCostFegyver, int upgradeCostSisak, int upgradeCostVert, int upgradeCostGatya, int upgradeCostCipo){
         ContentValues initialValues = new ContentValues();
-        initialValues.put(KEY_ID, id);
-        initialValues.put(COL_NAME, name);
-        initialValues.put(COL_SZAKMA, szakma);
-        initialValues.put(COL_STAMINA, stamina);
-        initialValues.put(COL_STRENGTH, strength);
-        initialValues.put(COL_DEFFENSE, deffense);
-        initialValues.put(COL_AGILITY, agility);
-        initialValues.put(COL_ARMOR, armor);
-        initialValues.put(COL_LIFEPOINT, lifepoint);
-        initialValues.put(COL_ENABLESTATUSPOINT, enableStatusPoints);
-        initialValues.put(COL_ATACKPOWER, atackPower);
-        initialValues.put(COL_EXP, exp);
-        initialValues.put(COL_CLAS, clas);
-        initialValues.put(COL_CASH,cash);
-        initialValues.put(COL_LEVEL,level);
-        initialValues.put(COL_KARDLVL, fegyverLvl);
-        initialValues.put(COL_PAJZSLVL,pajzsLvl);
-        initialValues.put(COL_FEJESLVL,fejesLvl);
-        initialValues.put(COL_CHESTLVL,chestLvl);
-        initialValues.put(COL_GATYALVL,gatyaLvl);
-        initialValues.put(COL_CIPOLVL,cipoLvl);
-        initialValues.put(COL_UPGRADECOSTFEGYVER, upgradeCostFegyver);
-        initialValues.put(COL_UPGRADECOSTSISAK,upgradeCostSisak);
-        initialValues.put(COL_UPGRADECOSTVERT,upgradeCostVert);
-        initialValues.put(COL_UPGRADECOSTGATYA,upgradeCostGatya);
-        initialValues.put(COL_UPGRADECOSTCIPO,upgradeCostCipo);
+        initialValues.put(KEY_ID, id); //0
+        initialValues.put(COL_NAME, name); //1
+        initialValues.put(COL_SZAKMA, szakma); //2
+        initialValues.put(COL_STAMINA, stamina); //3
+        initialValues.put(COL_STRENGTH, strength); //4
+        initialValues.put(COL_DEFFENSE, deffense); //5
+        initialValues.put(COL_AGILITY, agility); //6
+        initialValues.put(COL_ARMOR, armor); //7
+        initialValues.put(COL_LIFEPOINT, lifepoint); //8
+        initialValues.put(COL_ENABLESTATUSPOINT, enableStatusPoints); //9
+        initialValues.put(COL_ATACKPOWER, atackPower); //10
+        initialValues.put(COL_EXP, exp); //11
+        initialValues.put(COL_CLAS, clas); //12
+        initialValues.put(COL_CASH,cash); //13
+        initialValues.put(COL_LEVEL,level); //14
+        initialValues.put(COL_KARDLVL, fegyverLvl); //15
+        initialValues.put(COL_PAJZSLVL,pajzsLvl); //16
+        initialValues.put(COL_FEJESLVL,fejesLvl); //17
+        initialValues.put(COL_CHESTLVL,chestLvl); //18
+        initialValues.put(COL_GATYALVL,gatyaLvl); //19
+        initialValues.put(COL_CIPOLVL,cipoLvl); //20
+        initialValues.put(COL_UPGRADECOSTFEGYVER, upgradeCostFegyver); //21
+        initialValues.put(COL_UPGRADECOSTSISAK,upgradeCostSisak); //22
+        initialValues.put(COL_UPGRADECOSTVERT,upgradeCostVert); //23
+        initialValues.put(COL_UPGRADECOSTGATYA,upgradeCostGatya); //24
+        initialValues.put(COL_UPGRADECOSTCIPO,upgradeCostCipo); //25
 
         return db.insert(TABLE_NAME, null,initialValues);
     }

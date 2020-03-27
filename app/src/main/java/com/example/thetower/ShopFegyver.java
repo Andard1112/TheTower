@@ -432,55 +432,7 @@ public class ShopFegyver extends AppCompatActivity {
             }
 
         }else{
-            if (clas.equals("Knight")){
-                ivFegyver.setVisibility(View.INVISIBLE);
-                ivFegyver.setEnabled(false);
-                ivFegyverEgykezes1.setVisibility(View.VISIBLE);
-                ivFegyverEgykezes1.setEnabled(true);
-                ivFegyverEgykezes2.setVisibility(View.VISIBLE);
-                ivFegyverEgykezes2.setEnabled(true);
-                ivFegyverEgykezes2.setImageResource(R.drawable.pajzs_hatter);
-                tvFegyverLeiras.setVisibility(View.INVISIBLE);
-                tvFegyverLeirasEgykezes1.setVisibility(View.VISIBLE);
-                tvFegyverLeirasEgykezes2.setVisibility(View.VISIBLE);
-                tvFegyverLeirasEgykezes1.setText("Arany: "+cash+"\nSebzés: "+ap+" --> "+(ap+1)+"\nSzint: "+fegyverlvl+" --> "+(fegyverlvl+1));
-                tvFegyverLeirasEgykezes2.setText("Armor: "+armor+" --> "+(armor+1)+"\n Fejlesztés ára: "+ upgradeCostFegyver+"\nSzint: "+pajzsLvl+" --> "+(pajzsLvl+1));
-            }else if (clas.equals("Warior")){
-                ivFegyver.setVisibility(View.VISIBLE);
-                ivFegyver.setEnabled(true);
-                ivFegyverEgykezes1.setVisibility(View.INVISIBLE);
-                ivFegyverEgykezes1.setEnabled(false);
-                ivFegyverEgykezes2.setVisibility(View.INVISIBLE);
-                ivFegyverEgykezes2.setEnabled(false);
-                tvFegyverLeiras.setVisibility(View.VISIBLE);
-                tvFegyverLeirasEgykezes1.setVisibility(View.INVISIBLE);
-                tvFegyverLeirasEgykezes2.setVisibility(View.INVISIBLE);
-                tvFegyverLeiras.setText("Arany: "+cash+"\nSebzés: "+ap+" --> "+(ap+1)+"\n Fejlesztés ára: "+ upgradeCostFegyver+"\nSzint: "+fegyverlvl+" --> "+(fegyverlvl+1));
-            }else if (clas.equals("Hunter")){
-                ivFegyver.setVisibility(View.VISIBLE);
-                ivFegyver.setEnabled(true);
-                ivFegyver.setImageResource(R.drawable.bow);
-                ivFegyverEgykezes1.setVisibility(View.INVISIBLE);
-                ivFegyverEgykezes1.setEnabled(false);
-                ivFegyverEgykezes2.setVisibility(View.INVISIBLE);
-                ivFegyverEgykezes2.setEnabled(false);
-                tvFegyverLeiras.setVisibility(View.VISIBLE);
-                tvFegyverLeirasEgykezes1.setVisibility(View.INVISIBLE);
-                tvFegyverLeirasEgykezes2.setVisibility(View.INVISIBLE);
-                tvFegyverLeiras.setText("Arany: "+cash+"\nSebzés: "+ap+" --> "+(ap+1)+"\n Fejlesztés ára: "+ upgradeCostFegyver+"\nSzint: "+fegyverlvl+" --> "+(fegyverlvl+1));
-            }else if (clas.equals("Rouge")) {
-                ivFegyver.setVisibility(View.INVISIBLE);
-                ivFegyver.setEnabled(false);
-                ivFegyverEgykezes1.setVisibility(View.VISIBLE);
-                ivFegyverEgykezes1.setEnabled(true);
-                ivFegyverEgykezes2.setVisibility(View.VISIBLE);
-                ivFegyverEgykezes2.setEnabled(true);
-                tvFegyverLeiras.setVisibility(View.INVISIBLE);
-                tvFegyverLeirasEgykezes1.setVisibility(View.VISIBLE);
-                tvFegyverLeirasEgykezes2.setVisibility(View.VISIBLE);
-                tvFegyverLeirasEgykezes1.setText("Arany: " + cash + "\nSebzés: " + ap + " --> " + (ap + 1)+"\nSzint: "+fegyverlvl+" --> "+(fegyverlvl+1));
-                tvFegyverLeirasEgykezes2.setText("Sebzés: " + ap + " --> " + (ap + 1) + "\n Fejlesztés ára: " + upgradeCostFegyver+"\nSzint: "+fegyverlvl+" --> "+(fegyverlvl+1));
-            }
+
 
                     Toast.makeText(ShopFegyver.this, "Nem lehet fejleszteni, nincs hozzá elég pénzed!", Toast.LENGTH_SHORT).show();
 
@@ -491,12 +443,12 @@ public class ShopFegyver extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             szakma = cursor.getString(2);
             armor = cursor.getInt(7);
-            ap = cursor.getInt(11);
-            clas = cursor.getString(12);
-            cash = cursor.getInt(13);
-            fegyverlvl = cursor.getInt(17);
-            pajzsLvl = cursor.getInt(18);
-            upgradeCostFegyver = cursor.getInt(23);
+            ap = cursor.getInt(10);
+            clas = cursor.getString(11);
+            cash = cursor.getInt(12);
+            fegyverlvl = cursor.getInt(15);
+            pajzsLvl = cursor.getInt(16);
+            upgradeCostFegyver = cursor.getInt(21);
             cursor.close();
         }
     }
