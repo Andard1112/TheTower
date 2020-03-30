@@ -132,12 +132,11 @@ public class characterCreation extends AppCompatActivity{
                 if (!name.isEmpty()) {
                     String szakma = etSzakma.getText().toString();
                     Classes classes = new Classes(clas);
-                    CharacterInformation character = new CharacterInformation();
-                    character.name = name;
                     long result = as.insertRow(1,name,szakma,classes.getStamina(),classes.getStrength(),classes.getDeffense()
                             ,classes.getAgility(),0,100,0,
                             classes.getAgility(),0,etClass.getText().toString(),0,1,
-                            1,1,1,1,1,1,1,1,1,1,1);
+                            1,1,1,1,1,1,1,1,
+                            1,1,1);
                     Intent gameStart = new Intent(characterCreation.this,GameFoKepernyo.class);
                     startActivity(gameStart);
                     finish();

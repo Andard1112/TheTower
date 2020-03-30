@@ -126,7 +126,6 @@ public class Fight extends AppCompatActivity {
                 enemy4[3] = 4;
                 break;
         }
-        tvFAtackPower.setText(""+szornyFajta+";"+dungeonSzint);
         switch (szornyFajta){
             case 1:
                 ivFEnemy.setImageResource(R.drawable.zombie);
@@ -157,6 +156,7 @@ public class Fight extends AppCompatActivity {
                             finish();
                         }
                     });
+                    builder.setCancelable(false);
                     AlertDialog dialog = builder.create();
                     // Display the alert dialog on interface
                     dialog.show();
@@ -191,6 +191,7 @@ public class Fight extends AppCompatActivity {
                             finish();
                         }
                     });
+                    builder.setCancelable(false);
                     AlertDialog dialog = builder.create();
                     // Display the alert dialog on interface
                     dialog.show();
@@ -225,6 +226,7 @@ public class Fight extends AppCompatActivity {
                             finish();
                         }
                     });
+                    builder.setCancelable(false);
                     AlertDialog dialog = builder.create();
                     // Display the alert dialog on interface
                     dialog.show();
@@ -246,7 +248,7 @@ public class Fight extends AppCompatActivity {
                     // Set a title for alert dialog
                     builder.setTitle("Vereség");
                     // Ask the final question
-                    builder.setMessage("Önt megölte a szörny, és véget ért a játék.?");
+                    builder.setMessage("Önt megölte a szörny, és véget ért a játék. Szeretne viszalépni a fő menübe?");
                     // Set the alert dialog yes button click listener
                     builder.setPositiveButton("Rendben", new DialogInterface.OnClickListener() {
                         @Override
@@ -259,6 +261,7 @@ public class Fight extends AppCompatActivity {
                             finish();
                         }
                     });
+                    builder.setCancelable(false);
                     AlertDialog dialog = builder.create();
                     // Display the alert dialog on interface
                     dialog.show();
@@ -329,7 +332,7 @@ public class Fight extends AppCompatActivity {
             tvFStrength.setText("Strength: "+strength);
             tvFAgility.setText("Agility: "+agility);
             tvFArmor.setText("Armor: "+armor);
-            //tvFAtackPower.setText("Sebzés:: "+atackPower);
+            tvFAtackPower.setText("Sebzés:: "+atackPower);
             cursor.close();
         }
     }

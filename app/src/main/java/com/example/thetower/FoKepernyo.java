@@ -1,5 +1,4 @@
 package com.example.thetower;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,12 +8,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 public class FoKepernyo extends AppCompatActivity {
     private Button btnContinue, btnNewGame;
     private String name;
     AdatbazisSegito as = new AdatbazisSegito(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +40,7 @@ public class FoKepernyo extends AppCompatActivity {
                 // Set a title for alert dialog
                 builder.setTitle("Új játék");
                 // Ask the final question
-                builder.setMessage("Ha új játékot kezd akkor törlődik az eddigi mentés.\\nBiztos új játékot szeretne kezdeni?");
+                builder.setMessage("Ha új játékot kezd akkor törlődik az eddigi mentés.\nBiztos új játékot szeretne kezdeni?");
                 // Set the alert dialog yes button click listener
                 builder.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
                     @Override
@@ -66,10 +63,8 @@ public class FoKepernyo extends AppCompatActivity {
                 AlertDialog dialog = builder.create();
                 // Display the alert dialog on interface
                 dialog.show();
-
             }
         });
-
     }
     private void init(){
         btnContinue = findViewById(R.id.btnContinue);

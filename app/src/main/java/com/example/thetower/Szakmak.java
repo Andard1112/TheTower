@@ -17,7 +17,7 @@ public class Szakmak {
                 this.leiras = "Amennyiben ezt a szakmát választod, akkor a fegyverkovácsnál vásárolt fegyverek(egykezes,kétkezes,tőr,íj) olcsóbb lesz 5%-al. Ez a szakma nagyon hasznos az összes hős osztály számára, de leginkább a Warior a Rouge és a Hunter-nek.";
                 break;
             case 2:
-                this.guildName = "Páncél kovács";
+                this.guildName = "Páncélkovács";
                 this.leiras = "Amennyiben ezt a szakmát választod, akkor a páncél kovácsnál vásárolt felszerelések(páncél,pajzs,sisak,kesztyű,nadrág,csizma) olcsóbb lesz 5%-al. Ez a szakma nagyon hasznos az összes hős osztály számára, de leginkább a Knight-nak a leghasznosabb.";
                 this.pancelArCsokken = true;
                 break;
