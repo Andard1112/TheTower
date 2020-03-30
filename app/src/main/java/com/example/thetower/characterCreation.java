@@ -17,7 +17,6 @@ public class characterCreation extends AppCompatActivity{
     private ImageView ivcharacter;
     private int clas = 1;
     private int szakma = 1;
-    CharacterInformation chi = new CharacterInformation();
     AdatbazisSegito as = new AdatbazisSegito(characterCreation.this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,13 +95,13 @@ public class characterCreation extends AppCompatActivity{
                     Szakmak szakmak = new Szakmak(szakma);
                     etSzakma.setText(szakmak.getGuildName()+"");
                     etSzakmaInfo.setText(szakmak.getLeiras()+"");
-                    chi.setGuild(szakma);
+
                 }else{
                     szakma--;
                     Szakmak szakmak = new Szakmak(szakma);
                     etSzakma.setText(szakmak.getGuildName()+"");
                     etSzakmaInfo.setText(szakmak.getLeiras()+"");
-                    chi.setGuild(szakma);
+
                 }
             }
         });
@@ -114,13 +113,13 @@ public class characterCreation extends AppCompatActivity{
                     Szakmak szakmak = new Szakmak(szakma);
                     etSzakma.setText(szakmak.getGuildName()+"");
                     etSzakmaInfo.setText(szakmak.getLeiras()+"");
-                    chi.setGuild(szakma);
+
                 }else{
                     szakma++;
                     Szakmak szakmak = new Szakmak(szakma);
                     etSzakma.setText(szakmak.getGuildName()+"");
                     etSzakmaInfo.setText(szakmak.getLeiras()+"");
-                    chi.setGuild(szakma);
+
                 }
             }
         });
