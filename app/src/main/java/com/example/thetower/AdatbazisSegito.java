@@ -40,7 +40,10 @@ public class AdatbazisSegito {
     private static final String COL_UPGRADECOSTGATYA = "upgradeCostGatya";
     private static final String COL_UPGRADECOSTCIPO = "upgradeCostCipo";
 
-    private static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,COL_DUNGEONSZINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
+    private static final String[] ALL_KEYS = new String[] {KEY_ID, COL_NAME, COL_SZAKMA,COL_STAMINA,COL_STRENGTH,COL_DEFFENSE,COL_AGILITY,COL_ARMOR,
+            COL_DUNGEONSZINT,COL_ENABLESTATUSPOINT,COL_ATACKPOWER,COL_EXP,COL_CLAS, COL_CASH,COL_LEVEL,
+            COL_KARDLVL,COL_PAJZSLVL,COL_FEJESLVL,COL_CHESTLVL,COL_GATYALVL,COL_CIPOLVL, COL_UPGRADECOSTFEGYVER,
+            COL_UPGRADECOSTSISAK,COL_UPGRADECOSTVERT,COL_UPGRADECOSTGATYA,COL_UPGRADECOSTCIPO};
 
     private static final int DATABASE_VERSION = 3;
 
@@ -97,7 +100,11 @@ public class AdatbazisSegito {
         myDBHelper.close();
     }
 
-    public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, int dungeonSzint, int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level, int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl, int cipoLvl, int upgradeCostFegyver, int upgradeCostSisak, int upgradeCostVert, int upgradeCostGatya, int upgradeCostCipo){
+    public long insertRow(int id,String name, String szakma, int stamina, int strength, double deffense, int agility, int armor, int dungeonSzint,
+                          int enableStatusPoints, int atackPower,int exp, String clas, int cash, int level,
+                          int fegyverLvl, int pajzsLvl, int fejesLvl, int chestLvl, int gatyaLvl,
+                          int cipoLvl, int upgradeCostFegyver, int upgradeCostSisak, int upgradeCostVert,
+                          int upgradeCostGatya, int upgradeCostCipo){
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_ID, id); //0
         initialValues.put(COL_NAME, name); //1

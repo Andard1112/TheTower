@@ -34,7 +34,6 @@ public class Dungeon extends AppCompatActivity {
                     btnDown.setEnabled(true);
                     enemy = random.nextInt(10)+1;
                     szornyek();
-
                 }
             }
         });
@@ -96,7 +95,6 @@ public class Dungeon extends AppCompatActivity {
     }
     private void szornyek(){
         enemy = random.nextInt(10)+1;
-
         if (enemy < 7 ){
             final int szorny = random.nextInt(4)+1;
             switch (szorny){
