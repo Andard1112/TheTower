@@ -16,7 +16,7 @@ public class ShopPancel extends AppCompatActivity {
     Button btnASPSisak, btnASPVert, btnASPGatya, btnASPCipo;
     AdatbazisSegito as = new AdatbazisSegito(this);
     int cash,armor,fejesArmor,vertArmor,gatyaArmor,cipoArmor, fejesLvl,chestLvl,gatyaLvl,cipoLvl, upgradeCostSisak, upgradeCostVert, upgradeCostGatya, upgradeCostCipo;
-    private String szakma, clas;
+    private String szakma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,12 @@ public class ShopPancel extends AppCompatActivity {
         Cursor cursor = as.getRow(1);
         as.open();
         AdatLekeres(cursor);
-        if (armor > 3){
-            fejesArmor = armor - (chestLvl + gatyaLvl + cipoLvl);
-            vertArmor = armor - (fejesLvl + gatyaLvl + cipoLvl);
-            gatyaArmor = armor - (fejesLvl + chestLvl + cipoLvl);
-            cipoArmor = armor - (fejesLvl + chestLvl + gatyaLvl);
-        }else{
-            fejesArmor = 0;
-            vertArmor = 0;
-            gatyaArmor = 0;
-            cipoArmor = 0;
-        }
+
+            fejesArmor = fejesLvl;
+            vertArmor = chestLvl;
+            gatyaArmor = gatyaLvl;
+            cipoArmor = cipoLvl;
+
 
         tvASPSisakLeiras.setText("Arany: "+cash+"\nArmor: "+fejesArmor+" --> "+(fejesArmor+1)+"\nSzint: "+fejesLvl+" --> "+(fejesLvl+1)+"\n Fejlesztés ára: "+ upgradeCostSisak);
         tvASPVertLeiras.setText("Arany: "+cash+"\nArmor: "+vertArmor+" --> "+(vertArmor+1)+"\nSzint: "+chestLvl+" --> "+(chestLvl+1)+"\n Fejlesztés ára: "+ upgradeCostVert);
@@ -86,8 +81,7 @@ public class ShopPancel extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             szakma = cursor.getString(2);
             armor = cursor.getInt(7);
-            clas = cursor.getString(11);
-            cash = cursor.getInt(12);
+            cash = cursor.getInt(13);
             fejesLvl = cursor.getInt(17);
             chestLvl = cursor.getInt(18);
             gatyaLvl = cursor.getInt(19);
@@ -100,9 +94,7 @@ public class ShopPancel extends AppCompatActivity {
         }
     }
     public void UpgradeSisak(){
-        if (armor > 3){
-            fejesArmor = armor - (chestLvl + gatyaLvl + cipoLvl);
-        }
+        fejesArmor = fejesLvl;
         if (cash >= upgradeCostSisak){
             if (szakma.equals("Páncél kovács")){
                 if (upgradeCostSisak > 10){
@@ -147,9 +139,7 @@ public class ShopPancel extends AppCompatActivity {
         }
     }
     public void UpgradeVert(){
-        if (armor > 3){
-            vertArmor = armor - (fejesLvl + gatyaLvl + cipoLvl);
-        }
+        vertArmor = chestLvl;
         if (cash >= upgradeCostVert){
             if (szakma.equals("Páncél kovács")){
                 if (upgradeCostVert > 10){
@@ -194,9 +184,7 @@ public class ShopPancel extends AppCompatActivity {
         }
     }
     public void UpgradeGatya(){
-        if (armor > 3){
-            gatyaArmor = armor - (fejesLvl + chestLvl + cipoLvl);
-        }
+        gatyaArmor = gatyaLvl;
         if (cash >= upgradeCostGatya){
             if (szakma.equals("Páncél kovács")){
                 if (upgradeCostGatya > 10){
@@ -241,9 +229,7 @@ public class ShopPancel extends AppCompatActivity {
         }
     }
     public void UpgradeCipo(){
-        if (armor > 3){
-            cipoArmor = armor - (fejesLvl + chestLvl + gatyaLvl);
-        }
+        cipoArmor = cipoLvl;
         if (cash >= upgradeCostCipo){
             if (szakma.equals("Páncél kovács")){
                 if (upgradeCostCipo > 10){
@@ -261,7 +247,7 @@ public class ShopPancel extends AppCompatActivity {
                 as.updateRowArmor(armor);
                 cipoLvl += 1;
                 as.updateRowCipo(cipoLvl);
-                tvASPSisakLeiras.setText("Arany: "+cash+"\nArmor: "+cipoArmor+" --> "+(cipoArmor+1)+"\nSzint: "+cipoLvl+" --> "+(cipoLvl+1)+"\n Fejlesztés ára: "+ upgradeCostCipo);
+                tvASPGatyaLeiras.setText("Arany: "+cash+"\nArmor: "+cipoArmor+" --> "+(cipoArmor+1)+"\nSzint: "+cipoLvl+" --> "+(cipoLvl+1)+"\n Fejlesztés ára: "+ upgradeCostCipo);
             }else if (szakma.equals("Páncél szakértő")){
                 cash -= upgradeCostCipo;
                 as.updateCash(cash);
@@ -271,7 +257,7 @@ public class ShopPancel extends AppCompatActivity {
                 as.updateRowArmor(armor);
                 cipoLvl += 1;
                 as.updateRowCipo(cipoLvl);
-                tvASPSisakLeiras.setText("Arany: "+cash+"\nArmor: "+cipoArmor+" --> "+(cipoArmor+1)+"\nSzint: "+cipoLvl+" --> "+(cipoLvl+1)+"\n Fejlesztés ára: "+ upgradeCostCipo);
+                tvASPGatyaLeiras.setText("Arany: "+cash+"\nArmor: "+cipoArmor+" --> "+(cipoArmor+1)+"\nSzint: "+cipoLvl+" --> "+(cipoLvl+1)+"\n Fejlesztés ára: "+ upgradeCostCipo);
             }else{
                 cash -= upgradeCostCipo;
                 as.updateCash(cash);
@@ -281,7 +267,7 @@ public class ShopPancel extends AppCompatActivity {
                 as.updateRowArmor(armor);
                 cipoLvl += 1;
                 as.updateRowCipo(cipoLvl);
-                tvASPSisakLeiras.setText("Arany: "+cash+"\nArmor: "+cipoArmor+" --> "+(cipoArmor+1)+"\nSzint: "+cipoLvl+" --> "+(cipoLvl+1)+"\n Fejlesztés ára: "+ upgradeCostCipo);
+                tvASPGatyaLeiras.setText("Arany: "+cash+"\nArmor: "+cipoArmor+" --> "+(cipoArmor+1)+"\nSzint: "+cipoLvl+" --> "+(cipoLvl+1)+"\n Fejlesztés ára: "+ upgradeCostCipo);
             }
         }else{
             Toast.makeText(ShopPancel.this, "Nem lehet fejleszteni, nincs hozzá elég pénzed!", Toast.LENGTH_SHORT).show();
